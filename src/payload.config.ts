@@ -5,34 +5,12 @@ import Posts from "./collections/Posts";
 import Tags from "./collections/Tags";
 import Users from "./collections/Users";
 
-// import addCloudinary from "./cloudinary/cloudinaryPlugin";
-
-// const CloudinaryMediaHooks = path.resolve(__dirname, "cloudinary/hooks/CloudinaryMediaHooks");
-// const mockModulePath = path.resolve(__dirname, "mocks/emptyObject");
-
 export default buildConfig({
-	serverURL: "http://localhost:3000",
+	serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS,
 	admin: {
 		user: Users.slug,
-		// webpack: (config) => ({
-		// 	...config,
-		// 	resolve: {
-		// 		...config.resolve,
-		// 		alias: {
-		// 			...config.resolve!.alias,
-		// 			[CloudinaryMediaHooks]: mockModulePath,
-		// 		},
-		// 		fallback: {
-		// 			...config.resolve!.fallback,
-		// 			fs: false,
-		// 			url: false,
-		// 			stream: false,
-		// 		},
-		// 	},
-		// }),
 	},
 	collections: [Categories, Posts, Tags, Users],
-	// plugins: [addCloudinary],
 	typescript: {
 		outputFile: path.resolve(__dirname, "payload-types.ts"),
 	},
