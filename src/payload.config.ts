@@ -16,7 +16,4 @@ export default buildConfig({
 	},
 	cors: [`${process.env.NEXT_APP_URL}`],
 	csrf: [`${process.env.NEXT_APP_URL}`],
-	graphQL: {
-		schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
-	},
 });
