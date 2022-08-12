@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload/types";
+import slug from "../fields/Slug";
 
 const Posts: CollectionConfig = {
 	slug: "posts",
@@ -10,6 +11,7 @@ const Posts: CollectionConfig = {
 		read: () => true,
 	},
 	fields: [
+		slug,
 		{
 			name: "title",
 			type: "text",
